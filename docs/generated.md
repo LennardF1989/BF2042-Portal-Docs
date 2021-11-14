@@ -338,6 +338,16 @@ Breaks and exits the execution of a looping block, such as While or LoopVariable
 </block>
 ```
 
+# %{PYRITE_SUBROUTINE}
+
+%{help.subroutineinstance.summary}
+
+```
+<block type="subroutineInstanceBlock">
+    <field name="SUBROUTINE_NAME">Subroutine</field>
+</block>
+```
+
 # ClearAllCustomMessages
 
 Clears all custom messages for a provided **Player** or **TeamId**. If no **Player** or **TeamId** is provided, it will clear all custom messages for everyone.
@@ -439,6 +449,69 @@ Returns the closest **Player** to a position in the world. Can be filtered using
             </value>
         </block>
     </value>
+</block>
+```
+
+# %{PYRITE_CONDITION}
+
+%{help.condition.summary}
+
+### %{help.common.input}
+
+1. %{PYRITE_TYPE_BOOLEAN}
+
+```
+<block type="ruleBlock">
+    <mutation isOnGoingEvent="false"></mutation>
+    <field name="NAME">New Rule</field>
+    <field name="EVENTTYPE">OnPlayerEarnedKill</field>
+    <statement name="CONDITIONS">
+        <block type="conditionBlock">
+            <value name="CONDITION">
+                <block type="Equals">
+                    <value name="VALUE-0">
+                        <block type="GetTeamId">
+                            <value name="VALUE-0">
+                                <block type="EventPlayer"></block>
+                            </value>
+                        </block>
+                    </value>
+                    <value name="VALUE-1">
+                        <block type="GetTeamId">
+                            <value name="VALUE-0">
+                                <block type="Number">
+                                    <field name="NUM">1</field>
+                                </block>
+                            </value>
+                        </block>
+                    </value>
+                </block>
+            </value>
+        </block>
+    </statement>
+    <statement name="ACTIONS">
+        <block type="SetGamemodeScore">
+            <value name="VALUE-0">
+                <block type="EventPlayer"></block>
+            </value>
+            <value name="VALUE-1">
+                <block type="Add">
+                    <value name="VALUE-0">
+                        <block type="GetGamemodeScore">
+                            <value name="VALUE-0">
+                                <block type="EventPlayer"></block>
+                            </value>
+                        </block>
+                    </value>
+                    <value name="VALUE-1">
+                        <block type="Number">npm start
+                            <field name="NUM">1</field>
+                        </block>
+                    </value>
+                </block>
+            </value>
+        </block>
+    </statement>
 </block>
 ```
 
@@ -2064,6 +2137,7 @@ Returns the 1st provided value if the condition is _True_, otherwise, returns th
 </block>
 ```
 
+
 # InputRestrictions
 
 Returns a **InputRestrictionsItem** from the collection of all inputs which can be restricted with EnableInputRestriction.
@@ -2701,6 +2775,14 @@ _Note: It\'s your responsibility to ensure a safe and fair experience for others
 </block>
 ```
 
+# %{PYRITE_MOD}
+
+%{help.mod.summary}
+
+```
+<block type="modBlock"></block>
+```
+
 # Modulo
 
 Returns the remainder of the 1st provided value divided by the 2nd provided value.
@@ -3211,6 +3293,100 @@ Returns a whole **Number** rounded from the input value. The value rounds up if 
 </block>
 ```
 
+# %{PYRITE_RULE}
+
+%{help.rule.summary}
+
+```
+<block type="ruleBlock">
+	<mutation isOnGoingEvent="false"></mutation>
+    <field name="EVENTTYPE">OnPlayerEarnedKill</field>
+    <statement name="CONDITIONS">
+        <block type="conditionBlock">
+            <value name="CONDITION">
+                <block type="Equals">
+                    <value name="VALUE-0">
+                        <block type="GetGamemodeScore">
+							<value name="VALUE-0">
+								<block type="GetTeamId">
+									<value name="VALUE-0">
+										<block type="EventPlayer"></block>
+									</value>
+								</block>
+							</value>
+						</block>
+                    </value>
+                    <value name="VALUE-1">
+                        <block type="GetTargetScore" />
+                    </value>
+                </block>
+            </value>
+        </block>
+    </statement>
+	<statement name="ACTIONS">
+        <block type="EndRound">
+            <value name="VALUE-0">
+                <block type="GetTeamId">
+					<value name="VALUE-0">
+						<block type="EventPlayer"></block>
+					</value>
+				</block>
+            </value>
+        </block>
+    </statement>
+</block>
+```
+
+### %{help.rule.typesofrule}
+
+#### %{PYRITE_EVENT_ONGOING}
+
+%{help.rule.ongoing}
+
+#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERDIED}
+
+%{help.rule.onplayerdied}
+
+#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERDEPLOYED}
+
+%{help.rule.onplayerdeployed}
+
+#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERJOINGAME}
+
+%{help.rule.onplayerjoingame}
+
+#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERLEAVEGAME}
+
+%{help.rule.onplayerleavegame}
+
+#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYEREARNEDKILL}
+
+%{help.rule.onplayerearnedkill}
+
+#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONGAMEMODE}
+
+%{help.rule.ongamemodeending}
+
+#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONMANDOWN}
+
+%{help.rule.onmandown}
+
+#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONREVIVED}
+
+%{help.rule.onrevived}
+
+#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONTIMELIMITREACHED}
+
+%{help.rule.ontimelimitreached}
+
+#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONGAMEMODESTARTED}
+
+%{help.rule.ongamemodestarted}
+
+#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERIRREVERSIBLYDEAD}
+
+%{help.rule.onplayerirreversiblydead}
+
 # SetGameModeScore
 
 Sets the gamemode score of the provided **Player** or **TeamId**.
@@ -3676,6 +3852,16 @@ Stops an in-progress tracking of a **Variable**, leaving it at its current value
 <block type="StopChasingVariable"></block>
 ```
 
+# %{PYRITE_SUBROUTINE}
+
+%{help.subroutine.summary}
+
+```
+<block type="subroutineBlock">
+    <field name="SUBROUTINE_NAME">Subroutine</field>
+</block>
+```
+
 # Subtract
 
 Returns the difference between two **Number** values or two **Vector** values.
@@ -3890,6 +4076,10 @@ Returns the value found at a provided index of an **Array**.
     </value>
 </block>
 ```
+
+# %{PYRITE_TYPE_VARIABLE}
+
+%{help.variablereference.summary}
 
 # VectorTowards
 

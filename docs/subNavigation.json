@@ -3,6 +3,7 @@
         "Title": "Documentation",
         "Links": {
             "Blocks": "/docs/blocks",
+            "Snippets": "/docs/snippets",
             "Official Documenation": "/docs/generated"
         }
     }
