@@ -2,6 +2,7 @@
     {
         "Title": "Snippets",
         "Links": {
+            "Force Players To Weapon": "/docs/snippets/ForcePlayersToWeapon.md"
         }
     }
 ]
