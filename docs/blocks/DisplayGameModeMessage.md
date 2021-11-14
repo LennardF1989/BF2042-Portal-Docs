@@ -27,3 +27,8 @@ _Note: This will only appear to players that are deployed on the map. It\'s your
     </value>
 </block>
 ```
+
+### Notes
+1. If you push several game mode messages one after another, they will stack and will be shown one by one in the order of execution.
+2. This message will produce a sound when appears and disappears from the screen.
+3. You can see all the message appearances [here](https://cdn.discordapp.com/attachments/907670279675842640/908647207023026196/unknown.png).
