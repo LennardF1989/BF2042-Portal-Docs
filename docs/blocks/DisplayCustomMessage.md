@@ -45,3 +45,7 @@ _Note: It\'s your responsibility to ensure a safe and fair experience for others
     </value>
 </block>
 ```
+
+### Notes:
+1. Custom messages will be covered by a kill card (when killed) and a deploy screen background. If you want to make sure the player sees the message, use [NotificationMessage](/docs/blocks/DisplayNotificationMessage.md)
+2. You can see all the message appearances [here](https://cdn.discordapp.com/attachments/907670279675842640/908647207023026196/unknown.png).

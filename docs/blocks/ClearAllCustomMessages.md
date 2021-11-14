@@ -23,3 +23,7 @@ Clears all custom messages for a provided **Player** or **TeamId**. If no **Play
     </value>
 </block>
 ```
+
+### Notes
+1. You don't need to use this block if you want to change the message's text.
+2. If you want to push a custom message after this block, use [`Wait(0.1)`](/docs/blocks/Wait.md) block before that, otherwise it won't work.

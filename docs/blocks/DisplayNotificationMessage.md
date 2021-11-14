@@ -33,3 +33,7 @@ _Note: It\'s your responsibility to ensure a safe and fair experience for others
     </value>
 </block>
 ```
+
+### Notes:
+1. Notification messages will appear above all other UI elements and produce a sound.
+2. You can see all the message appearances [here](https://cdn.discordapp.com/attachments/907670279675842640/908647207023026196/unknown.png).

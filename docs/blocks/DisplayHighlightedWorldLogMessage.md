@@ -27,3 +27,7 @@ _Note: This will only appear to players that are deployed on the map. It\'s your
     </value>
 </block>
 ```
+
+### Notes:
+1. "Displays a **Message** on the world log for 6 seconds" actually means it will be displayed as a big message for 6 seconds, then got pushed in a smaller stack above, where it will be eventually pushed away from the screen.
+2. You can see all the message appearances [here](https://cdn.discordapp.com/attachments/907670279675842640/908647207023026196/unknown.png).
