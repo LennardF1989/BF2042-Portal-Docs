@@ -5,6 +5,11 @@ A format **String** is a **String** that contains `{}` (called braces) within th
   
 _Note: It\'s your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
 
+### Notes
+The supplied string literal is subject to vague censoring rules PRE-formatting. This means that, if you try to print a message with the string literal `test B: {} test`, and a parameter for `{}` it will change the text to `test ***** test` and throw an error saying that there's no braces in the text.
+
+This is presumably due to the game thinking you wrote `b*itch`. `: = i`, `{ = c` -> `bi c}`, which is close enough to the swear word.
+
 ### Inputs
 
 1. String
