@@ -338,11 +338,11 @@ Breaks and exits the execution of a looping block, such as While or LoopVariable
 </block>
 ```
 
-# %{PYRITE_SUBROUTINE}
+# SUBROUTINE
 
-%{help.subroutineinstance.summary}
+Calls a **SUBROUTINE** block of the same name.
 
-```
+```blockly
 <block type="subroutineInstanceBlock">
     <field name="SUBROUTINE_NAME">Subroutine</field>
 </block>
@@ -452,15 +452,15 @@ Returns the closest **Player** to a position in the world. Can be filtered using
 </block>
 ```
 
-# %{PYRITE_CONDITION}
+# CONDITION
 
-%{help.condition.summary}
+Evaluates the condition to run a **RULE** or **SUBROUTINE** block based on the **Bool** input.
 
-### %{help.common.input}
+### Inputs
 
-1. %{PYRITE_TYPE_BOOLEAN}
+1. Bool
 
-```
+```blockly
 <block type="ruleBlock">
     <mutation isOnGoingEvent="false"></mutation>
     <field name="NAME">New Rule</field>
@@ -2775,11 +2775,11 @@ _Note: It\'s your responsibility to ensure a safe and fair experience for others
 </block>
 ```
 
-# %{PYRITE_MOD}
+# MOD
 
-%{help.mod.summary}
+Anything you want to work within your custom gamemode must be placed inside this block. You can put blocks you\'re working on outside of this block but they will not be executed. You can utilize the space outside the **MOD** block as a brainstorming area.
 
-```
+```blockly
 <block type="modBlock"></block>
 ```
 
@@ -3293,11 +3293,13 @@ Returns a whole **Number** rounded from the input value. The value rounds up if 
 </block>
 ```
 
-# %{PYRITE_RULE}
+# RULE
 
-%{help.rule.summary}
+**RULE** blocks are triggered from an in-game **EVENT**. When an **EVENT** triggers, this block will check if its **CONDITION** has been met and then execute all of the **ACTIONS**.  
+  
+_In the following example, the **CONDITION** is checking when a Player earns a kill, whether their team has reached the target score, Then, the **ACTIONS** execute, which in this case, is ending the gamemode for the **Player** team\'s favor._
 
-```
+```blockly
 <block type="ruleBlock">
 	<mutation isOnGoingEvent="false"></mutation>
     <field name="EVENTTYPE">OnPlayerEarnedKill</field>
@@ -3337,55 +3339,55 @@ Returns a whole **Number** rounded from the input value. The value rounds up if 
 </block>
 ```
 
-### %{help.rule.typesofrule}
+### Types of **RULE** Blocks Events
 
-#### %{PYRITE_EVENT_ONGOING}
+#### Ongoing
 
-%{help.rule.ongoing}
+Ongoing **EVENT** types continually check if its **CONDITION** has become _True_. If so, the **ACTIONS** will be executed once. In order for the **EVENT** to execute again, the **CONDITION** must become _False_ before becoming _True_ again. Ongoing **EVENT** types exist within the  Global, Player, and Team context. Within the Player and Team contexts, payload value blocks, such as EventPlayer and EventTeam, can be used to refer to the specific Player or Team within the **EVENT**. _Note: In FFA, Ongoing Team will not execute at all._
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERDIED}
+#### OnPlayerDied
 
-%{help.rule.onplayerdied}
+This will trigger whenever a **Player** dies. _Payloads: EventPlayer (Victim), EventOtherPlayer (Killer)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERDEPLOYED}
+#### OnPlayerDeployed
 
-%{help.rule.onplayerdeployed}
+This will trigger whenever a **Player** deploys. _Payloads: EventPlayer (Deployed Player)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERJOINGAME}
+#### OnPlayerJoinGame
 
-%{help.rule.onplayerjoingame}
+This will trigger when a **Player** joins the game. _Payloads: EventPlayer (Joined Player)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERLEAVEGAME}
+#### OnPlayerLeaveGame
 
-%{help.rule.onplayerleavegame}
+This will trigger when any player leaves the game.
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYEREARNEDKILL}
+#### OnPlayerEarnedKill
 
-%{help.rule.onplayerearnedkill}
+This will trigger when a **Player** earns a kill against another **Player**. _Payloads: EventPlayer (Killer), EventOtherPlayer (Victim)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONGAMEMODE}
+#### OnGameModeEnding
 
-%{help.rule.ongamemodeending}
+This will trigger when the gamemode ends.
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONMANDOWN}
+#### OnMandown
 
-%{help.rule.onmandown}
+This will trigger when a **Player** is forced into the mandown state. _Payloads: EventPlayer  (Downed Player)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONREVIVED}
+#### OnRevived
 
-%{help.rule.onrevived}
+This will trigger when a **Player** is revived by another **Player**. _Payloads: EventPlayer (Revived Player), EventOtherPlayer (Reviver Player)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONTIMELIMITREACHED}
+#### OnTimeLimitReached
 
-%{help.rule.ontimelimitreached}
+This will trigger when the gamemode time limit has been reached.
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONGAMEMODESTARTED}
+#### OnGameModeStarted
 
-%{help.rule.ongamemodestarted}
+This will trigger at the start of the gamemode.
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERIRREVERSIBLYDEAD}
+#### OnPlayerIrreversiblyDead
 
-%{help.rule.onplayerirreversiblydead}
+This will trigger when the **Player** dies and returns to the deploy screen. _Payloads: EventPlayer (Dead Player)_
 
 # SetGameModeScore
 
@@ -3852,11 +3854,13 @@ Stops an in-progress tracking of a **Variable**, leaving it at its current value
 <block type="StopChasingVariable"></block>
 ```
 
-# %{PYRITE_SUBROUTINE}
+# SUBROUTINE
 
-%{help.subroutine.summary}
+**SUBROUTINE** blocks are special blocks that are similar to **RULE** blocks, but do not have a designated **EVENT**. A **SUBROUTINE** block\'s **ACTIONS** will be executed when called from the **RULE** block. Like **RULE** blocks, **SUBROUTINE** blocks can have a **CONDITION** to determine whether or not the **ACTIONS** inside should execute.
+  
+  An important note is payload values, including EventPlayer, EventOtherPlayer, and EventTeam, use the context of the **RULE** block in which the **SUBROUTINE** instance block is placed in. An example of this would be, if your **RULE** block has an instance of EventPlayer, and the **SUBROUTINE** is called in OnPlayerDeployed, it would use the EventPlayer associated with OnPlayerDeployed. Be careful with this, as you will run into errors if your **SUBROUTINE** is placed inside a **RULE** block with non-existant payloads for that **EVENT**.
 
-```
+```blockly
 <block type="subroutineBlock">
     <field name="SUBROUTINE_NAME">Subroutine</field>
 </block>
@@ -4077,9 +4081,11 @@ Returns the value found at a provided index of an **Array**.
 </block>
 ```
 
-# %{PYRITE_TYPE_VARIABLE}
+# Variable
 
-%{help.variablereference.summary}
+This block is used to reference a **Variable** instance. The **Variable** can be selected by setting the scope -  Global , Player, or Team - in the first dropdown, and then selecting the **Variable** name in the second dropdown.  
+  
+**Variable** instances can be created or deleted by clicking on the _Variables_ tab, and clicking on _Manage Variables_.
 
 # VectorTowards
 

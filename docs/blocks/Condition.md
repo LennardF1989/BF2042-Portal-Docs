@@ -1,12 +1,12 @@
-# %{PYRITE_CONDITION}
+# CONDITION
 
-%{help.condition.summary}
+Evaluates the condition to run a **RULE** or **SUBROUTINE** block based on the **Bool** input.
 
-### %{help.common.input}
+### Inputs
 
-1. %{PYRITE_TYPE_BOOLEAN}
+1. Bool
 
-```
+```blockly
 <block type="ruleBlock">
     <mutation isOnGoingEvent="false"></mutation>
     <field name="NAME">New Rule</field>

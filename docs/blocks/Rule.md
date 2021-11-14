@@ -1,8 +1,10 @@
-# %{PYRITE_RULE}
+# RULE
 
-%{help.rule.summary}
+**RULE** blocks are triggered from an in-game **EVENT**. When an **EVENT** triggers, this block will check if its **CONDITION** has been met and then execute all of the **ACTIONS**.  
+  
+_In the following example, the **CONDITION** is checking when a Player earns a kill, whether their team has reached the target score, Then, the **ACTIONS** execute, which in this case, is ending the gamemode for the **Player** team\'s favor._
 
-```
+```blockly
 <block type="ruleBlock">
 	<mutation isOnGoingEvent="false"></mutation>
     <field name="EVENTTYPE">OnPlayerEarnedKill</field>
@@ -42,52 +44,52 @@
 </block>
 ```
 
-### %{help.rule.typesofrule}
+### Types of **RULE** Blocks Events
 
-#### %{PYRITE_EVENT_ONGOING}
+#### Ongoing
 
-%{help.rule.ongoing}
+Ongoing **EVENT** types continually check if its **CONDITION** has become _True_. If so, the **ACTIONS** will be executed once. In order for the **EVENT** to execute again, the **CONDITION** must become _False_ before becoming _True_ again. Ongoing **EVENT** types exist within the  Global, Player, and Team context. Within the Player and Team contexts, payload value blocks, such as EventPlayer and EventTeam, can be used to refer to the specific Player or Team within the **EVENT**. _Note: In FFA, Ongoing Team will not execute at all._
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERDIED}
+#### OnPlayerDied
 
-%{help.rule.onplayerdied}
+This will trigger whenever a **Player** dies. _Payloads: EventPlayer (Victim), EventOtherPlayer (Killer)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERDEPLOYED}
+#### OnPlayerDeployed
 
-%{help.rule.onplayerdeployed}
+This will trigger whenever a **Player** deploys. _Payloads: EventPlayer (Deployed Player)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERJOINGAME}
+#### OnPlayerJoinGame
 
-%{help.rule.onplayerjoingame}
+This will trigger when a **Player** joins the game. _Payloads: EventPlayer (Joined Player)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERLEAVEGAME}
+#### OnPlayerLeaveGame
 
-%{help.rule.onplayerleavegame}
+This will trigger when any player leaves the game.
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYEREARNEDKILL}
+#### OnPlayerEarnedKill
 
-%{help.rule.onplayerearnedkill}
+This will trigger when a **Player** earns a kill against another **Player**. _Payloads: EventPlayer (Killer), EventOtherPlayer (Victim)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONGAMEMODE}
+#### OnGameModeEnding
 
-%{help.rule.ongamemodeending}
+This will trigger when the gamemode ends.
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONMANDOWN}
+#### OnMandown
 
-%{help.rule.onmandown}
+This will trigger when a **Player** is forced into the mandown state. _Payloads: EventPlayer  (Downed Player)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONREVIVED}
+#### OnRevived
 
-%{help.rule.onrevived}
+This will trigger when a **Player** is revived by another **Player**. _Payloads: EventPlayer (Revived Player), EventOtherPlayer (Reviver Player)_
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONTIMELIMITREACHED}
+#### OnTimeLimitReached
 
-%{help.rule.ontimelimitreached}
+This will trigger when the gamemode time limit has been reached.
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONGAMEMODESTARTED}
+#### OnGameModeStarted
 
-%{help.rule.ongamemodestarted}
+This will trigger at the start of the gamemode.
 
-#### %{ID_ARRIVAL_MODBUILDER_EVENT_ONPLAYERIRREVERSIBLYDEAD}
+#### OnPlayerIrreversiblyDead
 
-%{help.rule.onplayerirreversiblydead}
+This will trigger when the **Player** dies and returns to the deploy screen. _Payloads: EventPlayer (Dead Player)_
