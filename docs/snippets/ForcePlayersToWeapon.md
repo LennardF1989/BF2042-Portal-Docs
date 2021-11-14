@@ -2,22 +2,22 @@
 
 This snippet is used in Gun Master mode to force players to have an exact weapon of mode creator's choice. 
 
-### Problem
+## Problem
 In a current Portal's Rules Editor build, there is no way to remove a certain (or all) weapons from player's inventory, no way to empty out the inventory slots. You can only add a certain weapon by replacing it in a specific slot (see [ReplacePlayerInventory block](/docs/blocks/ReplacePlayerInventory))
 
-### Prerequisites
+## Prerequisites
 1. Disable ALL weapons and gadgets. 
 
 It might not be necessary, but will be useful since the code runs only after a full deploy (including the camera animation), so the player can technically use his current loadout before this swap happened. Also, this way players won't see any weapons on a deploy screen.
 
-### Downsides
+## Downsides
 1. There is no way to determine the exact weapon player's using, because the function is not present in Rules Editor yet. *You have to track it down manually with variables, if you need to.*
 2. Melee weapon will still be present for the melee fight (F key by default) and for finishers, even though it is not present in a slot. There is no way to have player without a knife. It won't be possible to switch to its slot though. There is also no way to determine a melle kill because of that.
 
-## Code
+# Code
 
-### Disable all inventory
-> This subroutine will ensure that the player cannot switch to another weapon slot. 
+## Disable all inventory
+This subroutine will ensure that the player cannot switch to another weapon slot. 
 
 ```blockly
 <block
@@ -216,9 +216,8 @@ It might not be necessary, but will be useful since the code runs only after a f
 
 ```
 
-### Empty all weapons
-
-> This subroutine will ensure that the player cannot choose other slots, because they will be out of ammo. `DisableAllInventory` accompanies this subroutine to prevent switching, but it won't prevent from the switch once your forced weapon is run out of ammo.
+## Empty all weapons
+This subroutine will ensure that the player cannot choose other slots, because they will be out of ammo. `DisableAllInventory` accompanies this subroutine to prevent switching, but it won't prevent from the switch once your forced weapon is run out of ammo.
 
 ```blockly
 <block
@@ -461,11 +460,11 @@ It might not be necessary, but will be useful since the code runs only after a f
 </block>
 ```
 
-### Give a weapon
+## Give a weapon
 
-> Gives a specific weapon, gives a maximum amount of ammo in the inventory and a currently used mazagine. `EnableInputRestrictions` are used to prevent from doing weird stuff.
-> 
-> *NOTE: This code will produce error messages for weapons without ability to hold ammo. It doesn't affect its work though for other weapons.*
+Gives a specific weapon, gives a maximum amount of ammo in the inventory and a currently used mazagine. `EnableInputRestrictions` are used to prevent from doing weird stuff.
+
+{alert=info} **NOTE:** This code will produce error messages for weapons without ability to hold ammo. It doesn't affect its work though for other weapons.
 
 ```blockly
 <block
@@ -586,5 +585,5 @@ It might not be necessary, but will be useful since the code runs only after a f
 </block>
 ```
 
-### Author
+# Author
 @cjmaxik, "Gun Master - BF2042 Rendition" experience
