@@ -12,7 +12,7 @@ It might not be necessary, but will be useful since the code runs only after a f
 
 ## Downsides
 1. There is no way to determine the exact weapon player's using, because the function is not present in Rules Editor yet. *You have to track it down manually with variables, if you need to.*
-2. Melee weapon will still be present for the melee fight (F key by default) and for finishers, even though it is not present in a slot. There is no way to have player without a knife. It won't be possible to switch to its slot though. There is also no way to determine a melle kill because of that.
+2. Melee weapon will still be present for the melee fight (F key by default) and for finishers, even though it is not present in a slot. There is no way to have player without a knife. It won't be possible to switch to its slot though. There is also no way to determine a melee kill because of that.
 
 # Code
 
