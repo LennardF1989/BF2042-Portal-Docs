@@ -2,7 +2,8 @@
     {
         "Title": "Snippets",
         "Links": {
-            "Force Players To Weapon": "/docs/snippets/ForcePlayersToWeapon"
+            "Force Players To Weapon": "/docs/snippets/ForcePlayersToWeapon",
+            "Get Players on Specific Team": "/docs/snippets/GetPlayersonSpecificTeam"
         }
     }
 ]
