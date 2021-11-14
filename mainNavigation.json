@@ -1,0 +1,11 @@
+[
+  {
+    "Title": "Main Navigation",
+    "Links": {
+      "Home": "/",
+      "Documentation": "/docs",
+      "Browser Extension": "https://github.com/LennardF1989/BF2042-Portal-Extensions",
+      "Playground": "/playground"
+    }
+  }
+]

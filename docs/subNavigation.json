@@ -1,0 +1,9 @@
+[
+    {
+        "Title": "Documentation",
+        "Links": {
+            "Blocks": "/docs/blocks",
+            "Official Documenation": "/docs/generated"
+        }
+    }
+]
