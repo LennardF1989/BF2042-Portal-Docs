@@ -2,7 +2,7 @@
 
 This snippet is fairly simple but is a fairly common operation one would need to perform. This block will return an array of players that belong to a specific team (In this case, team 1).
 
-```blocky
+```blockly
 <block xmlns="https://developers.google.com/blockly/xml" type="FilteredArray" id="Mx3AU9*E|b8[,B?G0]FI">
   <value name="VALUE-0">
     <block type="AllPlayers" id="(KF/TI]!3WA@b4z3ILk)"></block>
@@ -36,7 +36,7 @@ Please note that these are just snippets. If you intend to use them they may nee
 ## Example 1
 Force deploy all dead players if all players on team 1 have died/are dead.
 
-```blocky
+```blockly
 <block xmlns="https://developers.google.com/blockly/xml" type="modBlock" id="^15vAkBG@_ba7/8zyu60" deletable="false">
   <statement name="RULES">
     <block type="ruleBlock" id="][;03?;kx[,i|$vI=rLC">
@@ -175,7 +175,7 @@ Force deploy all dead players if all players on team 1 have died/are dead.
 ## Example 2
 Set the primary weapon of Team 2 to the 12M Auto from Battlefield 2042
 
-```blocky
+```blockly
 <block xmlns="https://developers.google.com/blockly/xml" type="subroutineBlock" id="IIUjuG$5ddEhC*iw[FS-" deletable="false">
   <field name="SUBROUTINE_NAME">Demo</field>
   <statement name="ACTIONS">
