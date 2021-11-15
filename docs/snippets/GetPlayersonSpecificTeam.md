@@ -33,7 +33,8 @@ This snippet is fairly simple but is a fairly common operation one would need to
 # Example uses
 Please note that these are just snippets. If you intend to use them they may need to be modified to fit your use case. These are provided as is.
 
-- Force deploy all dead players if all players on team 1 have died/are dead.
+## Example 1
+Force deploy all dead players if all players on team 1 have died/are dead.
 
 ```blocky
 <block xmlns="https://developers.google.com/blockly/xml" type="modBlock" id="^15vAkBG@_ba7/8zyu60" deletable="false">
@@ -171,7 +172,8 @@ Please note that these are just snippets. If you intend to use them they may nee
   </statement>
 </block>
 ```
-- Set the primary weapon of Team 2 to the 12M Auto from Battlefield 2042
+## Example 2
+Set the primary weapon of Team 2 to the 12M Auto from Battlefield 2042
 
 ```blocky
 <block xmlns="https://developers.google.com/blockly/xml" type="subroutineBlock" id="IIUjuG$5ddEhC*iw[FS-" deletable="false">
@@ -277,5 +279,5 @@ Please note that these are just snippets. If you intend to use them they may nee
 </block>
 ```
 
-## Author
+# Author
 Mailstorm#2920
