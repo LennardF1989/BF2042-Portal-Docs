@@ -43,6 +43,10 @@ You can also include a code fence to render BF2042 Portal blocks. Simple copy a 
 </block>
 ```
 ````
+
+### Images
+It's possible to include images on your pages. Simply create a folder with the same name as your Markdown-file (eg. `CountOf.md` becomes a folder called `CountOf`), move the Markdown-file inside that folder and rename it to `index.md`. You can now also place images in the folder. Reference them with the following URL: `/resources/<path to subfolder>/<filename>.<extension>`.
+
 ## First steps
 With this being a new project, the first steps to take is probably to go over the original block documentation and extend them with more useful information. For example: some blocks only work if they are used together with a `Wait`-block. That's information someone needs to know about...
 
