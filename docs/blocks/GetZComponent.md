@@ -1,6 +1,6 @@
 # Get Z Component
 
-Returns the \'Z\' component of a provided **Vector**.
+Returns the 'Z' component of a provided **Vector**.
 
 ### Inputs
 

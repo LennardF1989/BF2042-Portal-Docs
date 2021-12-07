@@ -312,6 +312,28 @@ Returns the backward directional **Vector** of (0, 0, 1).
 <block type="BackwardVector"></block>
 ```
 
+# Bool
+
+A **Bool** is fancy game developer talk for a _True_ or _False_ value. This type is used to define or identify the state of a variety of things.  
+  
+Is a player currently prone?  
+  
+Is the player using a specific soldier?  
+  
+Can players not score points because of some custom condition?
+
+```blockly
+<block type="Boolean">
+    <field name="BOOL">TRUE</field>
+</block>
+```
+
+```blockly
+<block type="Boolean">
+    <field name="BOOL">FALSE</field>
+</block>
+```
+
 # Break
 
 Breaks and exits the execution of a looping block, such as While or LoopVariable.
@@ -589,7 +611,7 @@ Returns the **Number** of elements in the specified **Array**.
 
 # CreateVector
 
-Returns a **Vector** composed of three provided \'X\' (left), \'Y\' (up), and \'Z\' (forward) values.
+Returns a **Vector** composed of three provided 'X' (left), 'Y' (up), and 'Z' (forward) values.
 
 ### Inputs
 
@@ -754,6 +776,21 @@ Sets an amount of damage to be applied to a target **Player** by a giver **Playe
 </block>
 ```
 
+# DeathTypes
+
+Returns a **DeathTypesItem** from the collection of all possible death types.
+
+### Output
+
+-   DeathTypesItem
+
+```
+<block type="PlayerDeathTypesItem">
+    <field name="VALUE-0">PlayerDeathTypes</field>
+    <field name="VALUE-1">Weapon</field>
+</block>
+```
+
 # DirectionFromAngles
 
 Returns a directional **Vector** from the provided horizontal (yaw) and vertical (pitch) angles (in degrees).
@@ -841,7 +878,7 @@ Returns the direction, or normalized **Vector**, from a starting position and en
 
 Display a **Message** on-screen exclusive to custom gamemodes. Using the **CustomMessageSlotsItem**, this **Message** can be displayed on multiple lines. It will stay up for the length of the provided duration, or stay up indefinitely if a negative **Number** is provided. It will be displayed to everyone unless a specific **Player** or **TeamId** is provided.  
   
-_Note: It\'s your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
+_Note: It's your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
 
 ### Inputs
 
@@ -889,7 +926,7 @@ _Note: It\'s your responsibility to ensure a safe and fair experience for others
 
 Displays a **Message** on the screen for 6 seconds. If no target is provided, the **Message** will display to everyone.  
   
-_Note: This will only appear to players that are deployed on the map. It\'s your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
+_Note: This will only appear to players that are deployed on the map. It's your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
 
 ### Inputs
 
@@ -919,7 +956,7 @@ _Note: This will only appear to players that are deployed on the map. It\'s your
 
 Displays a **Message** on the world log for 6 seconds. If no target is provided, it will display the **Message** to everyone.  
   
-_Note: This will only appear to players that are deployed on the map. It\'s your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
+_Note: This will only appear to players that are deployed on the map. It's your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
 
 ### Inputs
 
@@ -949,7 +986,7 @@ _Note: This will only appear to players that are deployed on the map. It\'s your
 
 Displays a notification-type **Message** on the screen for 6 seconds. If no target is provided, it will display the **Message** to everyone.  
   
-_Note: It\'s your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
+_Note: It's your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
 
 ### Inputs
 
@@ -1195,7 +1232,7 @@ Enables or disables default gamemode scoring logic. The default scoring logic re
 
 # EnableDefaultGameModeWinCondition
 
-Enables or disables the gamemode\'s default win condition logic. The win condition is checked when the time limit is reached or when a team or player reaches the target score. Disable this if you want to trigger your own win condition.
+Enables or disables the gamemode's default win condition logic. The win condition is checked when the time limit is reached or when a team or player reaches the target score. Disable this if you want to trigger your own win condition.
 
 ### Inputs
 
@@ -1336,6 +1373,28 @@ Returns a **Bool** indicating if two values are equal to each other.
 </block>
 ```
 
+# EventDeathType
+
+Returns the **DeathType** of the victim from the **OnPlayerDied** or **OnPlayerEarnedKill** **EVENT** context.
+
+### Output
+
+-   DeathType
+
+```
+<block type="EventDeathTypeCompare">
+    <value name="VALUE-0">
+        <block type="EventDeathType"></block>
+    </value>
+    <value name="VALUE-1">
+        <block type="PlayerDeathTypesItem">
+            <field name="VALUE-0">PlayerDeathTypes</field>
+            <field name="VALUE-1">Melee</field>
+        </block>
+    </value>
+</block>
+```
+
 # EventOtherPlayer
 
 Returns the 2nd **Player** payload from the **RULE** **EVENT** context.
@@ -1370,7 +1429,7 @@ Returns the 1st **Player** payload from the **RULE** **EVENT** context.
 
 # EventTeam
 
-Returns the **TeamId** payload from the Ongoing Team ****EVENT**** context.
+Returns the **TeamId** payload from the Ongoing Team **EVENT** context.
 
 ### Output
 
@@ -1393,6 +1452,28 @@ Returns the **TeamId** payload from the Ongoing Team ****EVENT**** context.
                     </value>
                 </block>
             </value>
+        </block>
+    </value>
+</block>
+```
+
+# EventWeapon
+
+Returns the **HardwareId** of the weapon used to kill the victim from the **OnPlayerDied** or **OnPlayerEarnedKill** **EVENT** context.
+
+### Output
+
+-   HardwareId
+
+```
+<block type="EventWeaponCompare">
+    <value name="VALUE-0">
+        <block type="EventWeapon"></block>
+    </value>
+    <value name="VALUE-1">
+        <block type="PrimaryWeaponsItem">
+            <field name="VALUE-0">PrimaryWeaponsKingston</field>
+            <field name="VALUE-1">Keltec</field>
         </block>
     </value>
 </block>
@@ -1827,7 +1908,7 @@ Returns the value of a **Variable**.
 
 # GetXComponent
 
-Returns the \'X\' component of a provided **Vector**.
+Returns the 'X' component of a provided **Vector**.
 
 ### Inputs
 
@@ -1857,7 +1938,7 @@ Returns the \'X\' component of a provided **Vector**.
 
 # GetZComponent
 
-Returns the \'Y\' component of a provided **Vector**.
+Returns the 'Y' component of a provided **Vector**.
 
 ### Inputs
 
@@ -1887,7 +1968,7 @@ Returns the \'Y\' component of a provided **Vector**.
 
 # Get Z Component
 
-Returns the \'Z\' component of a provided **Vector**.
+Returns the 'Z' component of a provided **Vector**.
 
 ### Inputs
 
@@ -2234,7 +2315,7 @@ Returns an **InventoryThrowablesItem** from the collection of all throwables.
 
 ### Output
 
--   [Unknown: PYRITE_TYPE_THORWABLESITEMINDEX]
+-   InventoryThrowablesItem
 
 ```blockly
 <block type="ThrowablesItem">
@@ -2294,6 +2375,33 @@ Returns _True_ whether or not the active inventory slot of the target **Player**
         <block type="InventorySlotsItem">
             <field name="VALUE-0">InventorySlots</field>
             <field name="VALUE-1">SecondaryWeapon</field>
+        </block>
+    </value>
+</block>
+```
+
+# IsKillerWeapon
+
+Returns a **Bool** indicating if the given **HardwareId** is equivalent to the provided ability.
+
+### Inputs
+
+1. HardwareId
+2. InventoryPrimaryWeaponsItem | InventorySecondaryWeaponsItem | InventoryCharacterSpecialtiesItem | InventoryOpenGadgetsItem | InventoryThrowablesItem | InventoryMeleeWeaponsItem
+
+### Output
+
+-   Bool
+
+```
+<block type="EventWeaponCompare">
+    <value name="VALUE-0">
+        <block type="EventWeapon"></block>
+    </value>
+    <value name="VALUE-1">
+        <block type="PrimaryWeaponsItem">
+            <field name="VALUE-0">PrimaryWeaponsGrafton</field>
+            <field name="VALUE-1">Bazooka</field>
         </block>
     </value>
 </block>
@@ -2391,6 +2499,33 @@ Returns _True_ if the provided condition is _True_ for at least one element in t
                     <field name="NUM">10</field>
                 </block>
             </value>
+        </block>
+    </value>
+</block>
+```
+
+# IsVictimDeathType
+
+Returns a **Bool** indicating if the victim died by the provided **DeathType**.
+
+### Inputs
+
+1. DeathType
+2. DeathTypesItem
+
+### Output
+
+-   Bool
+
+```
+<block type="EventDeathTypeCompare">
+    <value name="VALUE-0">
+        <block type="EventDeathType"></block>
+    </value>
+    <value name="VALUE-1">
+        <block type="PlayerDeathTypesItem">
+            <field name="VALUE-0">PlayerDeathTypes</field>
+            <field name="VALUE-1">Headshot</field>
         </block>
     </value>
 </block>
@@ -2734,7 +2869,7 @@ Returns a **MedGadgetTypesItem** from the collection of medical gadget types whi
 Returns a constructed **Message** object which can be used with DisplayGameModeMessage, DisplayNotificationMessage, DisplayHighlightedWorldLogMessage, and DisplayCustomMessage. The **Message** object is created by providing a format **String**, which can take up to 3 format items.
 A format **String** is a **String** that contains `{}` (called braces) within them, which can be substituted for parameters. For example, the **String** - `{} gained {} points!` - can be given a **Player** and **Number** parameter and could output as `John gained 2 points!`. See the example below for how this can be used with blocks.  
   
-_Note: It\'s your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
+_Note: It's your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
 
 ### Inputs
 
@@ -2777,7 +2912,7 @@ _Note: It\'s your responsibility to ensure a safe and fair experience for others
 
 # MOD
 
-Anything you want to work within your custom gamemode must be placed inside this block. You can put blocks you\'re working on outside of this block but they will not be executed. You can utilize the space outside the **MOD** block as a brainstorming area.
+Anything you want to work within your custom gamemode must be placed inside this block. You can put blocks you're working on outside of this block but they will not be executed. You can utilize the space outside the **MOD** block as a brainstorming area.
 
 ```blockly
 <block type="modBlock"></block>
@@ -2928,6 +3063,29 @@ Returns a **Bool** indicating if two values are not equal to each other.
         <block type="EventOtherPlayer"></block>
     </value>
 </block>
+```
+
+# Number
+
+You can enter any numerical value you want here.  
+1, 2, 3.14, -10.2  
+  
+Use this block in combination with math blocks to do all sorts of fun mathematical equations.
+
+```blockly
+<block type="Add"></block>
+```
+
+```blockly
+<block type="Subtract"></block>
+```
+
+```blockly
+<block type="Multiply"></block>
+```
+
+```blockly
+<block type="Divide"></block>
 ```
 
 # Or
@@ -3297,7 +3455,7 @@ Returns a whole **Number** rounded from the input value. The value rounds up if 
 
 **RULE** blocks are triggered from an in-game **EVENT**. When an **EVENT** triggers, this block will check if its **CONDITION** has been met and then execute all of the **ACTIONS**.  
   
-_In the following example, the **CONDITION** is checking when a Player earns a kill, whether their team has reached the target score, Then, the **ACTIONS** execute, which in this case, is ending the gamemode for the **Player** team\'s favor._
+_In the following example, the **CONDITION** is checking when a Player earns a kill, whether their team has reached the target score, Then, the **ACTIONS** execute, which in this case, is ending the gamemode for the **Player** team's favor._
 
 ```blockly
 <block type="ruleBlock">
@@ -3542,7 +3700,7 @@ _Note: the max health of a player cannot be higher than 1000._
 
 # SetPlayerSoldier
 
-Sets a target **Player** soldier using a provided **PlayerSoldiersItem**. The soldier selected should be one that is available from that player team\'s faction, otherwise, the soldier will not be set. (_ex. if a team\'s faction is Bad Company 2 US, that player may only select Bad Company 2 US soldiers_).
+Sets a target **Player** soldier using a provided **PlayerSoldiersItem**. The soldier selected should be one that is available from that player team's faction, otherwise, the soldier will not be set. (_ex. if a team's faction is Bad Company 2 US, that player may only select Bad Company 2 US soldiers_).
 
 ### Inputs
 
@@ -3591,7 +3749,7 @@ _Note: the redeploy time of a player cannot exceed 60 seconds._
 
 Sets the target **Player** team using the provided **TeamId**. This will force the **Player** back to the deploy screen.  
   
-_Note: this block is not supported in Free For All and currently does not work with AI._
+_Note: this block is not supported in Free For All._
 
 ### Inputs
 
@@ -3854,9 +4012,27 @@ Stops an in-progress tracking of a **Variable**, leaving it at its current value
 <block type="StopChasingVariable"></block>
 ```
 
+# String
+
+You can use this block to utilize text within your mod.  
+  
+> Team 2s Flag has been Captured!  
+>  
+> A player has become the Juggernaut. Beware!  
+>  
+> Phase 3 of your really cool custom mod has started!  
+  
+_Note: It's your responsibility to ensure a safe and fair experience for others, violating the EA User Agreement by using offensive or inappropriate text may result in account bans._
+
+```blockly
+<block type="Text">
+    <field name="TEXT">Hello World!</field>
+</block>
+```
+
 # SUBROUTINE
 
-**SUBROUTINE** blocks are special blocks that are similar to **RULE** blocks, but do not have a designated **EVENT**. A **SUBROUTINE** block\'s **ACTIONS** will be executed when called from the **RULE** block. Like **RULE** blocks, **SUBROUTINE** blocks can have a **CONDITION** to determine whether or not the **ACTIONS** inside should execute.
+**SUBROUTINE** blocks are special blocks that are similar to **RULE** blocks, but do not have a designated **EVENT**. A **SUBROUTINE** block's **ACTIONS** will be executed when called from the **RULE** block. Like **RULE** blocks, **SUBROUTINE** blocks can have a **CONDITION** to determine whether or not the **ACTIONS** inside should execute.
   
   An important note is payload values, including EventPlayer, EventOtherPlayer, and EventTeam, use the context of the **RULE** block in which the **SUBROUTINE** instance block is placed in. An example of this would be, if your **RULE** block has an instance of EventPlayer, and the **SUBROUTINE** is called in OnPlayerDeployed, it would use the EventPlayer associated with OnPlayerDeployed. Be careful with this, as you will run into errors if your **SUBROUTINE** is placed inside a **RULE** block with non-existant payloads for that **EVENT**.
 
@@ -3975,7 +4151,7 @@ Gradually modifies the value of a **Variable** at a specified rate (value/second
 
 # TrackVariableOverTime
 
-Gradually modifies the value of a **Variable** over time (in seconds). The variable\'s value will reach the limit at the end of the interval.
+Gradually modifies the value of a **Variable** over time (in seconds). The variable's value will reach the limit at the end of the interval.
 
 ### Inputs
 

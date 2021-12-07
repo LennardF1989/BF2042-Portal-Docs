@@ -27,4 +27,4 @@ Clears text from the provided **CustomMessageSlotsItem** for the provided **Play
 
 ### Notes
 1. You don't need to use this block if you want to change the message's text.
-2. If you still want to push the message in the same spot, use [`Wait(0.1)`](/docs/blocks/Wait.md) block between , otherwise it won't work.
+2. If you still want to push the message in the same spot, use [`Wait(0.1)`](/docs/blocks/Wait) block between , otherwise it won't work.

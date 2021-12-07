@@ -1,6 +1,6 @@
 # GetZComponent
 
-Returns the \'Y\' component of a provided **Vector**.
+Returns the 'Y' component of a provided **Vector**.
 
 ### Inputs
 

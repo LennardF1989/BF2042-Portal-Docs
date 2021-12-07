@@ -1,6 +1,6 @@
 # GetXComponent
 
-Returns the \'X\' component of a provided **Vector**.
+Returns the 'X' component of a provided **Vector**.
 
 ### Inputs
 

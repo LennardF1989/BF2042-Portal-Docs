@@ -1,6 +1,6 @@
 # TrackVariableOverTime
 
-Gradually modifies the value of a **Variable** over time (in seconds). The variable\'s value will reach the limit at the end of the interval.
+Gradually modifies the value of a **Variable** over time (in seconds). The variable's value will reach the limit at the end of the interval.
 
 ### Inputs
 

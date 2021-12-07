@@ -2,7 +2,7 @@
 
 **RULE** blocks are triggered from an in-game **EVENT**. When an **EVENT** triggers, this block will check if its **CONDITION** has been met and then execute all of the **ACTIONS**.  
   
-_In the following example, the **CONDITION** is checking when a Player earns a kill, whether their team has reached the target score, Then, the **ACTIONS** execute, which in this case, is ending the gamemode for the **Player** team\'s favor._
+_In the following example, the **CONDITION** is checking when a Player earns a kill, whether their team has reached the target score, Then, the **ACTIONS** execute, which in this case, is ending the gamemode for the **Player** team's favor._
 
 ```blockly
 <block type="ruleBlock">

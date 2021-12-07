@@ -4,7 +4,7 @@ Returns an **InventoryThrowablesItem** from the collection of all throwables.
 
 ### Output
 
--   [Unknown: PYRITE_TYPE_THORWABLESITEMINDEX]
+-   InventoryThrowablesItem
 
 ```blockly
 <block type="ThrowablesItem">

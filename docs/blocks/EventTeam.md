@@ -1,6 +1,6 @@
 # EventTeam
 
-Returns the **TeamId** payload from the Ongoing Team ****EVENT**** context.
+Returns the **TeamId** payload from the Ongoing Team **EVENT** context.
 
 ### Output
 

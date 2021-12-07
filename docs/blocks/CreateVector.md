@@ -1,6 +1,6 @@
 # CreateVector
 
-Returns a **Vector** composed of three provided \'X\' (left), \'Y\' (up), and \'Z\' (forward) values.
+Returns a **Vector** composed of three provided 'X' (left), 'Y' (up), and 'Z' (forward) values.
 
 ### Inputs
 
