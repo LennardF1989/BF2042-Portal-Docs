@@ -262,6 +262,30 @@ Applies the effect of a medical gadget to a target **Player**.
 </block>
 ```
 
+# ArrayContains
+
+Returns a **Bool** value based on whether the provided **Array** contains the provided value.
+
+### Inputs
+
+1. Array
+2. Any Type
+
+### Output
+
+-   Bool
+
+```blockly
+<block type="ArrayContains">
+    <value name="VALUE-0">
+        <block type="AllPlayers"></block>
+    </value>
+    <value name="VALUE-1">
+        <block type="EventPlayer"></block>
+    </value>
+</block>
+```
+
 # ArraySlice
 
 Returns a copy of the specified **Array** containing only values from a specified index range.
@@ -2218,6 +2242,30 @@ Returns the 1st provided value if the condition is _True_, otherwise, returns th
 </block>
 ```
 
+# IndexOfArrayValue
+
+Returns the index of an **Array** value.
+
+### Inputs
+
+1. Array
+2. Any Type
+
+### Output
+
+-   Number
+
+```blockly
+<block type="IndexOfArrayValue">
+    <value name="VALUE-0">
+        <block type="AllPlayers"></block>
+    </value>
+    <value name="VALUE-1">
+        <block type="EventPlayer"></block>
+    </value>
+</block>
+```
+
 
 # InputRestrictions
 
@@ -3344,6 +3392,30 @@ Returns a random value from the specified **Array**.
 <block type="RandomValueInArray">
     <value name="VALUE-0">
         <block type="AllPlayers"></block>
+    </value>
+</block>
+```
+
+# RemoveFromArray
+
+Returns a copy of the specified **Array** with the provided value removed.
+
+### Inputs
+
+1. Array
+2. Any Type
+
+### Output
+
+-   Array
+
+```blockly
+<block type="RemoveFromArray">
+    <value name="VALUE-0">
+        <block type="AllPlayers"></block>
+    </value>
+    <value name="VALUE-1">
+        <block type="EventPlayer"></block>
     </value>
 </block>
 ```
